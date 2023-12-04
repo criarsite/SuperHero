@@ -1,0 +1,62 @@
+
+<h1>Buscar por nome</h1>
+<div>
+  <input type="search" [(ngModel)]="entrada" 
+  (keyup.enter)="getHero()">
+</div>
+
+<p> Heroi: {{ (heroi$ | async)?.name}}</p>
+<hr/>
+
+
+<h1>Adicionar</h1>
+<form (ngSubmit)="heroId$ ? updateHero(heroId$) : addHero()">
+  <div>
+    <label for="heroId">ID do Herói</label>
+    <input type="number" id="heroId" name="heroId" [(ngModel)]="heroId$" (ngModelChange)="loadHero(heroId$)">
+  </div>
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" [(ngModel)]="name">
+  </div>
+  <div>
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" name="firstName" [(ngModel)]="firstN">
+  </div>
+  <div>
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" name="lastName" [(ngModel)]="lastN">
+  </div>
+  <div>
+    <label for="place">Place</label>
+    <input type="text" id="place" name="place" [(ngModel)]="place">
+  </div>
+  <input type="submit" value="Adicionar Herói">
+</form>
+
+
+
+<hr/><hr/>
+<h1>Listar Herois</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Primeiro Nome</th>
+      <th>Último Nome</th>
+      <th>Local</th>
+      <th>Detalhes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroes$ | async">
+      <td>{{ hero.id }}</td>
+      <td>{{ hero.name }}</td>
+      <td>{{ hero.firstName }}</td>
+      <td>{{ hero.lastName }}</td>
+      <td>{{ hero.place }}</td>
+      <td><a (click)="deleteHero( hero.id )">Delete</a></td>
+    </tr>
+  </tbody>
+</table>

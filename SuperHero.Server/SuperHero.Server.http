@@ -1,0 +1,6 @@
+@SuperHero.Server_HostAddress = http://localhost:5047
+
+GET {{SuperHero.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

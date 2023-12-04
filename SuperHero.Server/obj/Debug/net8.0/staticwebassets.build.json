@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "SX16JU++gOnZiiY4A1ZbN6Zx9W35Em3EVDt1O83J0cw=",
+  "Source": "SuperHero.Server",
+  "BasePath": "_content/SuperHero.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
